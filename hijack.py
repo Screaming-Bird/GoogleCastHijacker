@@ -11,16 +11,16 @@ video_id = "dQw4w9WgXcQ" # Last part of YouTube music video URL
 # Prints list of Google Cast devices available to hijack on the network (name, model, UUID)
 def print_device_details(devices):
     for i in range(0, len(devices)):
-        print("\nDevice " + str(i+1) + ": \"" + devices[i].device.friendly_name +"\"")
-        print("\t" + devices[i].device.model_name + " (UUID: " + str(devices[i].device.uuid) + ")")
+        print("\nDevice " + str(i+1) + ": \"" + devices[i].friendly_name +"\"")
+        print("\t" + devices[i].model_name + " (UUID: " + str(devices[i].uuid) + ")")
 
 # Prints message confirming device has been hijacked
 def success(device):
-    print("\nSuccess! " + device.device.friendly_name + " is playing Never Gonna Give You Up by Rick Astley.")
+    print("\nSuccess! " + device.friendly_name + " is playing Never Gonna Give You Up by Rick Astley.")
 
 # Prints message stating device could not be hijacked
 def error(device):
-    print("\nSorry... " + device.device.friendly_name + " was not able to be hijacked.")
+    print("\nSorry... " + device.friendly_name + " was not able to be hijacked.")
 
 # Checks if hijacking was successful and calls success or error function
 def verify_hijacking(device, content):
